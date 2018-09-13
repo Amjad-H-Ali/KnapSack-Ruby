@@ -9,6 +9,16 @@ capacity = 10
 
 # Function that takes in current item index and 
 # current weight capacity of knapsack
+# Returns value of KnapSack
 def knap_sack indx, capacity
+
+	value = nil
+
+	# We've gone through all items or reached the weight limit of the knapsack
+	if indx < 0 || capacity == 0
+		value = 0
+		
+
+
 
 end	

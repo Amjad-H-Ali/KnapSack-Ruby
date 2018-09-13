@@ -20,8 +20,17 @@ def knap_sack indx, capacity
 
 	# If weight of current item exceeds ks capacity, move on to nex item
 	elsif weight[indx] > capacity
-		value = knap_sack indx - 1, capacity 
-		
+		value = knap_sack indx - 1, capacity
 
+	# Evaluate value to be greatest value between putting the item in the ks and moving on
+	# to the next item or leaving item and moving on
+	else
+		move_on = knap_sack index - 1, capacity
+
+		put_in = value[indx] + knap_sack index - 1, capacity - weight[indx]
+
+		value = [move_on, put_in].max
+		
+	value
 
 end	

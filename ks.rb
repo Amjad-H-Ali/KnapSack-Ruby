@@ -50,10 +50,10 @@ def knap_sack indx, capacity
 	if indx >= 0 
 		@values[indx][capacity] = result
 	end	
-	
+
 	result
 
 end	
 
 
-p knap_sack 6, capacity
+p knap_sack 6, capacity #14

@@ -17,8 +17,11 @@ def knap_sack indx, capacity
 	# We've gone through all items or reached the weight limit of the knapsack
 	if indx < 0 || capacity == 0
 		value = 0
-		
 
+	# If weight of current item exceeds ks capacity, move on to nex item
+	elsif weight[indx] > capacity
+		value = knap_sack indx - 1, capacity 
+		
 
 
 end	

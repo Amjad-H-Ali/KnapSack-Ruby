@@ -7,12 +7,26 @@ p "KnapSack!"
 # Weight capacity of knapsack
 capacity = 10
 
+# Object to store found values
+@values = {}
+
+for i in 0..@weight.length - 1
+	@values[i] = {} 
+end	
+
+
+
 # Function that takes in current item index and 
 # current weight capacity of knapsack
 # Returns value of KnapSack
 def knap_sack indx, capacity
 
 	result = nil
+
+	# If we already found the result of this certain index, capacity pair , no need to compute further
+	if indx >= 0 and @values[indx][capacity]
+		return @values[indx][capacity]
+	end	
 
 	# We've gone through all items or reached the weight limit of the knapsack
 	if indx < 0 || capacity == 0
@@ -31,7 +45,12 @@ def knap_sack indx, capacity
 
 		result = [move_on, put_in].max
 	end	
-		
+
+	# Store result in object before returning
+	if indx >= 0 
+		@values[indx][capacity] = result
+	end	
+	
 	result
 
 end	
